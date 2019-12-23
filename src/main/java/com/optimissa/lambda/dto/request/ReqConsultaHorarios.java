@@ -6,7 +6,7 @@ import lombok.Data;
 
 /**
  * 
- * Parametros para Consulta de Horarios
+ * Parametros para Consulta de Horarios de un Concesionario
  * 
  * @author Daniel.Hernandez
  *

@@ -7,14 +7,14 @@ import lombok.EqualsAndHashCode;
 
 /**
  * 
- * Parametros para Modificar Cita
+ * Parametros para Agendar Cita
  * 
  * @author Daniel.Hernandez
  *
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class ReqModificarCita extends Cita {
+public class ReqAgendarCita extends Cita {
 
 	private static final long serialVersionUID = 1L;
 

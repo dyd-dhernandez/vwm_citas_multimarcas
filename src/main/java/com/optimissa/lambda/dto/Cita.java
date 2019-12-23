@@ -60,7 +60,7 @@ public class Cita implements Serializable {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Cita [idConversacion=");
+		builder.append("[idConversacion=");
 		builder.append(idConversacion);
 		builder.append(", nombre=");
 		builder.append(nombre);

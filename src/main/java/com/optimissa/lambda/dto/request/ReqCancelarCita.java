@@ -1,5 +1,7 @@
 package com.optimissa.lambda.dto.request;
 
+import java.io.Serializable;
+
 import lombok.Data;
 
 /**
@@ -10,7 +12,9 @@ import lombok.Data;
  *
  */
 @Data
-public class ReqCancelarCita {
+public class ReqCancelarCita implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Número autoincremental generado por el aplicativo móvil con el fin de
