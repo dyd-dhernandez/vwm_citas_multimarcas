@@ -36,7 +36,7 @@ public class ConsultarHorarios extends ManagerAmazonSQSQueues implements Request
 		List<Message> messages = sqs.receiveMessage(receiveMessageRequest).getMessages();
 
 		System.out.println("\n" + messages.size() + " mensajes de respuesta encontrados.");
-		System.out.print("Buscando: [idConversacion = " + idConversacion + "]");
+		System.out.print("Buscando: [idConversacion = " + idConversacion + "] ");
 
 		RespuestaHorariosAtencionDMS respuesta = new RespuestaHorariosAtencionDMS();
 		for (Message message : messages) {
