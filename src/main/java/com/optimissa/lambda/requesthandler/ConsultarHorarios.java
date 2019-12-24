@@ -11,11 +11,9 @@ import com.amazonaws.services.sqs.model.ReceiveMessageRequest;
 import com.optimissa.lambda.dto.request.ReqConsultaHorarios;
 import com.optimissa.lambda.dto.response.RespuestaHorariosAtencionDMS;
 import com.optimissa.lambda.util.CodigosRespuesta;
+import static com.optimissa.lambda.util.Constantes.*;
 
 public class ConsultarHorarios extends ManagerAmazonSQSQueues implements RequestHandler<ReqConsultaHorarios, RespuestaHorariosAtencionDMS> {
-
-	private static String URL_COLA_ENTRADA = "https://sqs.us-east-2.amazonaws.com/811219751427/vwmx_resp_consultar_horario_to_lambda";
-	private static String URL_COLA_SALIDA = "https://sqs.us-east-2.amazonaws.com/811219751427/vwmx_req_consultar_horario_to_dms";
 
 	@Override
 	public RespuestaHorariosAtencionDMS handleRequest(ReqConsultaHorarios params, Context context) {
@@ -23,10 +21,10 @@ public class ConsultarHorarios extends ManagerAmazonSQSQueues implements Request
 		context.getLogger().log("\n" + params);
 
 		// Envia el mensaje a la Queue del DMS
-		sendMessageRequest(params, URL_COLA_SALIDA);
+		sendMessageRequest(params, URL_VWMX_REQ_CONSULTAR_HORARIO_TO_DMS);
 
 		RespuestaHorariosAtencionDMS respuestaHorariosAtencionDMS = searchRespuestaHorariosAtencionDMS(
-				params.getIdConversacion(), URL_COLA_ENTRADA);
+				params.getIdConversacion(), URL_VWMX_RESP_CONSULTAR_HORARIO_TO_LAMBDA);
 
 		return respuestaHorariosAtencionDMS;
 	}
